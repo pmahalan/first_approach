@@ -5,8 +5,6 @@
 
 const axios = require("axios");
 const inquirer = require("inquirer");
-const generateHTML = require("./greenHTML.js");
-
 
 //const electronHTMLto = require("electron-HTML-to")
 
@@ -34,10 +32,13 @@ inquirer
          "following": result.data.following
         }
 
-        generateHTML(githubinfo.)
+        const generateHTML = require("./greenHTML");
+        //the above line WAS at the top of the document; I moved it because i thought there might be an error with scope otherwise.
+        //But I still get the same error messages as before!!!
+
+        generateHTML(githubinfo)
         //console.log(githubinfo)
 
   });
-  
 
 })
