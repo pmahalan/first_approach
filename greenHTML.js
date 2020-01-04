@@ -29,7 +29,7 @@
     //   console.log(data)
     // };
     
-    function generateHTML(data) {
+    function generateHTML(githubinfo) {
       return `<!DOCTYPE html>
     <html lang="en">
        <head>
@@ -56,7 +56,7 @@
              height: 100%;
              }
              .wrapper {
-             background-color: ${colors.green.wrapperBackground};
+             background-color: ${colors[githubinfo.color].wrapperBackground};
              padding-top: 100px;
              }
              body {
@@ -98,8 +98,8 @@
              display: flex;
              justify-content: center;
              flex-wrap: wrap;
-             background-color: ${colors.green.headerBackground};
-             color: ${colors.green.headerColor};
+             background-color: ${colors[githubinfo.color].wrapperBackground};
+             color: ${colors[githubinfo.color].wrapperBackground};
              padding: 10px;
              width: 95%;
              border-radius: 6px;
@@ -110,7 +110,7 @@
              border-radius: 50%;
              object-fit: cover;
              margin-top: -75px;
-             border: 6px solid ${colors.green.photoBorderColor};
+             border: 6px solid ${colors[githubinfo.color].wrapperBackground};
              box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
              }
              .photo-header h1, .photo-header h2 {
@@ -153,8 +153,8 @@
              .card {
                padding: 20px;
                border-radius: 6px;
-               background-color: ${colors.green.headerBackground};
-               color: ${colors.green.headerColor};
+               background-color: ${colors[githubinfo.color].wrapperBackground};
+               color: ${colors[githubinfo.color].wrapperBackground};
                margin: 20px;
              }
              
@@ -178,11 +178,23 @@
     
           <body>
     
-             <div>
-              <p>${githubinfo}</p>
-            </div>
-    
-            <script src="./main.js"></script> 
+          <div class="wrapper">
+          <img class="photo-header" src=${JSON.stringify(githubinfo.avatar_url)} alt="your pic">
+
+       <div class="nav-link">
+         <p> Hi! My name is ${JSON.stringify(githubinfo.login)}</p>
+       </div>
+
+       <div class="links-nav">
+           <p> Hi! Currently at ${JSON.stringify(githubinfo.location)} </p> 
+           <p> Public Repositories: ${JSON.stringify(githubinfo.public_repos)} </p> 
+           <p> GitHub Stars: ${JSON.stringify(githubinfo.stars)} </p> 
+           <p> Followers: ${JSON.stringify(githubinfo.followers)} </p> 
+           <p> Following: ${JSON.stringify(githubinfo.following)} </p> 
+       </div>
+
+   </div>
+
           </body>
           `}
           module.exports = generateHTML;
