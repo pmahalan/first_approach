@@ -1,6 +1,6 @@
 # Node + GitHub API Assignment
 
-### GH Pages URL:  https://pmahalan.github.io/first_approach/
+### GH Pages URL: 
 
 The purpose of this assignment was to utilize node modules, including inquirer and electron. (Additionally, through this assignment, I used AJAX calls and referenced the information contained in an API.) Upon typing in the command "node index.js" into the terminal while in this project's directory, the user is asked (via the 'inquirer' node package) what their GitHub username is. Then, that username is fed into a URL which is used in an AJAX call to the GitHub API. I wrote code which references specific values within that API, such as followers, following, location, and number of public repositories. In addition to retrieving these values for any given username fed to the AJAX URL, my command-line application generates an HTML file upon the entering of the username to the command line. (That HTML file is a webpage which displays the information of the GitHub user whose username was typed into the command line.)
 
